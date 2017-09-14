@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+
+import {SocketService} from './socket/socket.service';
 import {
   NgModule,
   ApplicationRef
@@ -30,6 +32,7 @@ import { HomeComponent } from './home';
 import { AboutComponent } from './about';
 import { NoContentComponent } from './no-content';
 import { XLargeDirective } from './home/x-large';
+import { SocketComponent } from './socket'
 
 import '../styles/styles.scss';
 import '../styles/headings.css';
@@ -55,6 +58,7 @@ type StoreType = {
     AppComponent,
     AboutComponent,
     HomeComponent,
+    SocketComponent,
     NoContentComponent,
     XLargeDirective
   ],
@@ -76,7 +80,8 @@ type StoreType = {
    */
   providers: [
     ENV_PROVIDERS,
-    APP_PROVIDERS
+    APP_PROVIDERS,
+    SocketService
   ]
 })
 export class AppModule {
